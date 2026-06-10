@@ -1,0 +1,54 @@
+source,dest,step_from,step_to,count
+Deported or left country,ECUADOR,4,5,44
+Deported or left country,EL SALVADOR,4,5,4
+Deported or left country,GUATEMALA,4,5,16
+Deported or left country,HONDURAS,4,5,15
+Deported or left country,INDIA,4,5,2
+Deported or left country,MEXICO,4,5,36
+Deported or left country,NICARAGUA,4,5,7
+Deported or left country,PERU,4,5,2
+Deported or left country,SERBIA,4,5,2
+Deported or left country,SPAIN,4,5,2
+EPC,Deported or left country,3,4,4
+EPC,Detained as of early March,3,4,71
+EPC,No longer detained,3,4,14
+EROFCB,Deported or left country,3,4,55
+EROFCB,Detained as of early March,3,4,26
+EROFCB,EPC,2,3,89
+EROFCB,EROFCB,2,3,89
+EROFCB,No longer detained,3,4,8
+EROFCB,OTRPCNM,2,3,78
+EROFCB,PIC,2,3,69
+EROFCB,SPMHOLD,2,3,75
+EROFCB,TOORANM,2,3,52
+FREEBMN,SPMHOLD,2,3,53
+KANDIMN,SPMHOLD,2,3,54
+No longer detained,Bonded Out - Field Office,4,5,7
+No longer detained,Bonded Out - IJ,4,5,42
+No longer detained,ORR - Office of Refugee Resettlement,4,5,1
+No longer detained,Order of Recognizance - Humanitarian,4,5,9
+No longer detained,Order of Supervision - Re-Release,4,5,7
+No longer detained,Order of recognizance,4,5,180
+No longer detained,Order of supervision,4,5,15
+No longer detained,Paroled,4,5,1
+No longer detained,Proceedings Terminated,4,5,6
+No longer detained,Relief Granted by IJ,4,5,11
+No longer detained,Removed,4,5,17
+No longer detained,U.S. Marshals or other agency (explain in Detention Comments),4,5,2
+No longer detained,Voluntary departure,4,5,1
+No longer detained,Withdrawal,4,5,9
+OTRPCNM,Deported or left country,3,4,7
+OTRPCNM,Detained as of early March,3,4,47
+OTRPCNM,No longer detained,3,4,24
+PIC,Deported or left country,3,4,55
+PIC,Detained as of early March,3,4,3
+PIC,No longer detained,3,4,11
+SHERBMN,SPMHOLD,2,3,68
+SPMHOLD,Deported or left country,3,4,9
+SPMHOLD,EROFCB,1,2,452
+SPMHOLD,FREEBMN,1,2,53
+SPMHOLD,KANDIMN,1,2,54
+SPMHOLD,No longer detained,3,4,241
+SPMHOLD,SHERBMN,1,2,68
+TOORANM,Detained as of early March,3,4,42
+TOORANM,No longer detained,3,4,10

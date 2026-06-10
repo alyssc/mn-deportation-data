@@ -1,0 +1,22 @@
+source,dest,step_from,step_to,count
+Deported or left country,"CHINA, PEOPLES REPUBLIC OF",3,4,1
+Deported or left country,EL SALVADOR,3,4,18
+Deported or left country,GUATEMALA,3,4,62
+Deported or left country,HONDURAS,3,4,40
+Deported or left country,INDONESIA,3,4,1
+Deported or left country,KENYA,3,4,2
+Deported or left country,MEXICO,3,4,340
+Deported or left country,MONGOLIA,3,4,1
+Deported or left country,RUSSIA,3,4,1
+Deported or left country,SPAIN,3,4,2
+Deported or left country,UNITED KINGDOM,3,4,1
+Deported or left country,UZBEKISTAN,3,4,1
+Deported or left country,VENEZUELA,3,4,1
+EROFCB,Deported or left country,2,3,824
+FREEBMN,Deported or left country,2,3,36
+KANDIMN,Deported or left country,2,3,57
+SHERBMN,Deported or left country,2,3,48
+SPMHOLD,EROFCB,1,2,824
+SPMHOLD,FREEBMN,1,2,36
+SPMHOLD,KANDIMN,1,2,57
+SPMHOLD,SHERBMN,1,2,48

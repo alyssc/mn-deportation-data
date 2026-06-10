@@ -1,0 +1,28 @@
+source,dest,step_from,step_to,count
+DOUGLWI,Deported or left country,1,2,1
+DOUGLWI,Detained as of early March,1,2,2
+Deported or left country,ECUADOR,2,3,4
+Deported or left country,MEXICO,2,3,3
+Deported or left country,NICARAGUA,2,3,2
+Deported or left country,TAIWAN,2,3,1
+FREEBMN,Detained as of early March,1,2,3
+GFCORND,Detained as of early March,1,2,3
+KANDIMN,Detained as of early March,1,2,2
+No longer detained,Bonded Out - IJ,2,3,1
+No longer detained,Court Ordered,2,3,1
+No longer detained,ORR - Office of Refugee Resettlement,2,3,1
+No longer detained,Order of Recognizance - Humanitarian,2,3,5
+No longer detained,Order of recognizance,2,3,18
+No longer detained,Order of supervision,2,3,1
+No longer detained,Paroled,2,3,1
+No longer detained,Paroled - Humanitarian,2,3,1
+No longer detained,Proceedings Terminated,2,3,7
+No longer detained,Relief Granted by IJ,2,3,2
+No longer detained,Removed,2,3,8
+No longer detained,Transferred,2,3,2
+No longer detained,Withdrawal,2,3,5
+SHERBMN,Detained as of early March,1,2,24
+SHERBMN,No longer detained,1,2,1
+SPMHOLD,Deported or left country,1,2,9
+SPMHOLD,Detained as of early March,1,2,7
+SPMHOLD,No longer detained,1,2,52

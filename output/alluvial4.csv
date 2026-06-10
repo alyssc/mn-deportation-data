@@ -1,0 +1,269 @@
+source,dest,step_from,step_to,count
+ADAMSMS,Deported or left country,4,5,8
+ADAMSMS,Detained as of early March,4,5,1
+ADAMSMS,JENATLA,3,4,4
+BASILLA,Deported or left country,4,5,4
+BOONEKY,Detained as of early March,4,5,4
+BOONEKY,No longer detained,4,5,1
+BSAHOLD,GRAYSKY,2,3,1
+BSAHOLD,GRAYSKY,3,4,1
+CASSCNE,OMAHOLD,2,3,3
+CBENDTX,Detained as of early March,4,5,1
+CCAHUTX,Deported or left country,4,5,6
+CCAHUTX,Detained as of early March,4,5,1
+CIBOCNM,Detained as of early March,4,5,7
+CIBOCNM,EROFCB,3,4,6
+CIBOCNM,No longer detained,4,5,3
+CIBOLNM,CIBOCNM,3,4,5
+CROWGMN,Detained as of early March,4,5,3
+CROWGMN,KANDIMN,2,3,5
+CROWGMN,No longer detained,4,5,1
+CROWGMN,SPMHOLD,1,2,5
+CROWGMN,SPMHOLD,2,3,28
+CROWGMN,SPMHOLD,3,4,3
+DAKOTNE,OMAHOLD,2,3,1
+DOUGLWI,Detained as of early March,4,5,1
+DOUGLWI,No longer detained,4,5,1
+DOUGLWI,SHERBMN,2,3,1
+DOUGLWI,SPMHOLD,2,3,4
+Deported or left country,BRAZIL,5,6,1
+Deported or left country,COLOMBIA,5,6,10
+Deported or left country,COSTA RICA,5,6,1
+Deported or left country,ECUADOR,5,6,131
+Deported or left country,EL SALVADOR,5,6,16
+Deported or left country,ETHIOPIA,5,6,1
+Deported or left country,GUATEMALA,5,6,34
+Deported or left country,HONDURAS,5,6,28
+Deported or left country,MEXICO,5,6,107
+Deported or left country,"MICRONESIA, FEDERATED STATES OF",5,6,1
+Deported or left country,NICARAGUA,5,6,19
+Deported or left country,NIGERIA,5,6,1
+Deported or left country,SPAIN,5,6,1
+Deported or left country,VENEZUELA,5,6,13
+EAZ,Deported or left country,4,5,1
+EAZ,Detained as of early March,4,5,2
+ELVDFTX,Deported or left country,4,5,3
+ELVDFTX,Detained as of early March,4,5,1
+ELVDFTX,No longer detained,4,5,1
+EPC,BASILLA,3,4,1
+EPC,Deported or left country,4,5,1
+EPC,Detained as of early March,4,5,5
+EPC,EROFCB,3,4,1
+EPC,JENADLA,3,4,1
+EPC,JENATLA,3,4,2
+EPC,No longer detained,4,5,1
+EPC,SPMHOLD,3,4,3
+EPC,WASHOLD,3,4,1
+EROFCB,ADAMSMS,2,3,4
+EROFCB,ADAMSMS,3,4,3
+EROFCB,BASILLA,3,4,1
+EROFCB,CIBOCNM,2,3,6
+EROFCB,CIBOCNM,3,4,5
+EROFCB,CIBOLNM,2,3,5
+EROFCB,CROWGMN,2,3,1
+EROFCB,Deported or left country,4,5,85
+EROFCB,Detained as of early March,4,5,23
+EROFCB,EPC,2,3,9
+EROFCB,EPC,3,4,5
+EROFCB,EROFCB,2,3,75
+EROFCB,EROFCB,3,4,9
+EROFCB,FLO,3,4,3
+EROFCB,HLGHOLD,2,3,14
+EROFCB,HOUICDF,2,3,2
+EROFCB,HOUICDF,3,4,1
+EROFCB,IWAHOLD,2,3,3
+EROFCB,IWAHOLD,3,4,1
+EROFCB,JENADLA,3,4,11
+EROFCB,JENATLA,2,3,12
+EROFCB,JENATLA,3,4,6
+EROFCB,JKPCCLA,3,4,1
+EROFCB,KRNRCTX,2,3,3
+EROFCB,KRNRCTX,3,4,2
+EROFCB,No longer detained,4,5,8
+EROFCB,OTRPCNM,2,3,10
+EROFCB,OTRPCNM,3,4,13
+EROFCB,PIC,2,3,12
+EROFCB,PIC,3,4,11
+EROFCB,PINEPLA,3,4,2
+EROFCB,RWCCMLA,3,4,2
+EROFCB,SNAHOLD,1,2,1
+EROFCB,SNAHOLD,2,3,138
+EROFCB,SPMHOLD,1,2,2
+EROFCB,SPMHOLD,2,3,44
+EROFCB,SPMHOLD,3,4,17
+EROFCB,STCDFTX,2,3,2
+EROFCB,STWRTGA,2,3,1
+EROFCB,TOORANM,2,3,14
+EROFCB,TOORANM,3,4,7
+FLO,Deported or left country,4,5,3
+FREEBMN,Detained as of early March,4,5,1
+FREEBMN,KANHOLD,2,3,2
+FREEBMN,No longer detained,4,5,8
+FREEBMN,PIC,2,3,4
+FREEBMN,SPMHOLD,2,3,67
+GFCORND,SPMHOLD,2,3,1
+GRAYSKY,Detained as of early March,4,5,1
+GRAYSKY,INPHOLD,3,4,1
+GREENMO,No longer detained,4,5,2
+GRFHOLD,GFCORND,1,2,1
+HARDJIA,Detained as of early March,4,5,1
+HLGHOLD,WEBDCTX,3,4,14
+HOUICDF,Deported or left country,4,5,1
+HOUICDF,No longer detained,4,5,1
+HOUICDF,SPMHOLD,2,3,1
+HOUICDF,SPMHOLD,3,4,2
+INPHOLD,Deported or left country,4,5,1
+IWAHOLD,Deported or left country,4,5,7
+IWAHOLD,EAZ,3,4,3
+JENADLA,Deported or left country,4,5,12
+JENADLA,No longer detained,4,5,2
+JENATLA,ADAMSMS,3,4,6
+JENATLA,Deported or left country,4,5,15
+JENATLA,Detained as of early March,4,5,2
+JENATLA,JKPCCLA,3,4,1
+JENATLA,No longer detained,4,5,2
+JENATLA,PINEPLA,3,4,2
+JENATLA,RWCCMLA,3,4,3
+JKPCCLA,Deported or left country,4,5,1
+JKPCCLA,Detained as of early March,4,5,1
+KANDIMN,CROWGMN,2,3,1
+KANDIMN,Detained as of early March,4,5,3
+KANDIMN,No longer detained,4,5,6
+KANDIMN,PIC,2,3,1
+KANDIMN,SPMHOLD,1,2,1
+KANDIMN,SPMHOLD,2,3,58
+KANDIMN,SPMHOLD,3,4,6
+KANHOLD,GREENMO,3,4,2
+KCOJFOK,Detained as of early March,4,5,5
+KENTOKY,Detained as of early March,4,5,1
+KENTOKY,No longer detained,4,5,1
+KRNRCTX,Deported or left country,4,5,40
+KRNRCTX,Detained as of early March,4,5,15
+KRNRCTX,KRNRCTX,3,4,1
+KRNRCTX,No longer detained,4,5,5
+KRNRCTX,STCDFTX,3,4,2
+LAWINCI,Deported or left country,4,5,2
+LSRDCTX,Detained as of early March,4,5,2
+MTGHOLD,EROFCB,2,3,10
+NEMCCOI,Detained as of early March,4,5,2
+NEMCCOI,No longer detained,4,5,3
+NWRCCMN,KANDIMN,1,2,1
+No longer detained,Bonded Out - Field Office,5,6,3
+No longer detained,Bonded Out - IJ,5,6,21
+No longer detained,Court Ordered,5,6,1
+No longer detained,Order of Recognizance - Humanitarian,5,6,1
+No longer detained,Order of Supervision - Re-Release,5,6,1
+No longer detained,Order of recognizance,5,6,60
+No longer detained,Order of supervision,5,6,5
+No longer detained,Paroled,5,6,1
+No longer detained,Proceedings Terminated,5,6,7
+No longer detained,Relief Granted by IJ,5,6,3
+No longer detained,Removed,5,6,14
+No longer detained,Transferred,5,6,1
+No longer detained,Withdrawal,5,6,4
+OAKHOLD,EROFCB,2,3,2
+OMAHOLD,Deported or left country,4,5,1
+OMAHOLD,EROFCB,3,4,5
+OMAHOLD,JENADLA,3,4,2
+OMAHOLD,JENATLA,3,4,1
+OMAHOLD,LAWINCI,3,4,2
+OMAHOLD,NEMCCOI,3,4,5
+OMAHOLD,PIC,3,4,3
+OMAHOLD,PINEPLA,3,4,1
+OMAHOLD,POTTAIA,3,4,1
+OTRPCNM,Deported or left country,4,5,1
+OTRPCNM,Detained as of early March,4,5,8
+OTRPCNM,EPC,3,4,1
+OTRPCNM,IWAHOLD,3,4,6
+OTRPCNM,No longer detained,4,5,5
+OTRPCNM,RWCCMLA,3,4,1
+OTRPCNM,SPMHOLD,3,4,2
+PIC,CBENDTX,3,4,1
+PIC,Deported or left country,4,5,82
+PIC,Detained as of early March,4,5,3
+PIC,ELVDFTX,3,4,5
+PIC,EPC,3,4,1
+PIC,EROFCB,2,3,1
+PIC,EROFCB,3,4,3
+PIC,HOUICDF,3,4,1
+PIC,No longer detained,4,5,3
+PIC,PIC,3,4,3
+PIC,RGRNDTX,3,4,1
+PIC,WEBDCTX,3,4,3
+PINEPLA,Deported or left country,4,5,32
+PINEPLA,Detained as of early March,4,5,12
+POLKJIA,OMAHOLD,2,3,3
+POTTAIA,Deported or left country,4,5,1
+RGRNDTX,Detained as of early March,4,5,1
+RWCCMLA,Deported or left country,4,5,3
+RWCCMLA,Detained as of early March,4,5,3
+RWCCMLA,No longer detained,4,5,1
+SHERBMN,CROWGMN,2,3,1
+SHERBMN,Detained as of early March,4,5,9
+SHERBMN,No longer detained,4,5,20
+SHERBMN,OMAHOLD,2,3,4
+SHERBMN,PIC,2,3,1
+SHERBMN,SPMHOLD,1,2,3
+SHERBMN,SPMHOLD,2,3,63
+SHERBMN,SPMHOLD,3,4,1
+SIOUXIA,OMAHOLD,2,3,1
+SIOUXIA,WOODBIA,2,3,1
+SNAHOLD,CCAHUTX,3,4,7
+SNAHOLD,KRNRCTX,3,4,57
+SNAHOLD,STCDFTX,2,3,1
+SNAHOLD,STCDFTX,3,4,74
+SNAHOLD,STFRCTX,2,3,6
+SPMHOLD,BASILLA,3,4,2
+SPMHOLD,BOONEKY,3,4,5
+SPMHOLD,BSAHOLD,1,2,1
+SPMHOLD,BSAHOLD,2,3,1
+SPMHOLD,CASSCNE,1,2,3
+SPMHOLD,CROWGMN,1,2,33
+SPMHOLD,CROWGMN,3,4,4
+SPMHOLD,DAKOTNE,1,2,1
+SPMHOLD,DOUGLWI,1,2,5
+SPMHOLD,DOUGLWI,3,4,2
+SPMHOLD,Deported or left country,4,5,1
+SPMHOLD,EROFCB,1,2,355
+SPMHOLD,EROFCB,2,3,12
+SPMHOLD,EROFCB,3,4,79
+SPMHOLD,FREEBMN,1,2,73
+SPMHOLD,FREEBMN,3,4,9
+SPMHOLD,HARDJIA,3,4,1
+SPMHOLD,HOUICDF,1,2,1
+SPMHOLD,JENATLA,3,4,6
+SPMHOLD,KANDIMN,1,2,59
+SPMHOLD,KANDIMN,2,3,1
+SPMHOLD,KANDIMN,3,4,9
+SPMHOLD,KCOJFOK,3,4,5
+SPMHOLD,KENTOKY,3,4,2
+SPMHOLD,MTGHOLD,1,2,10
+SPMHOLD,No longer detained,4,5,43
+SPMHOLD,OAKHOLD,1,2,2
+SPMHOLD,PIC,1,2,1
+SPMHOLD,PIC,3,4,71
+SPMHOLD,PINEPLA,3,4,39
+SPMHOLD,POLKJIA,1,2,3
+SPMHOLD,SHERBMN,1,2,69
+SPMHOLD,SHERBMN,3,4,29
+SPMHOLD,SIOUXIA,1,2,2
+SPMHOLD,SNAHOLD,1,2,6
+SPMHOLD,SPMHOLD,1,2,3
+SPMHOLD,SPMHOLD,3,4,3
+SPMHOLD,WOODBIA,1,2,8
+STCDFTX,Deported or left country,4,5,43
+STCDFTX,Detained as of early March,4,5,33
+STCDFTX,LSRDCTX,3,4,2
+STCDFTX,SPMHOLD,3,4,1
+STFRCTX,SPMHOLD,3,4,6
+STWRTGA,RWCCMLA,3,4,1
+TOORANM,Detained as of early March,4,5,6
+TOORANM,EROFCB,3,4,13
+TOORANM,No longer detained,4,5,1
+TOORANM,OTRPCNM,3,4,1
+WASHOLD,Deported or left country,4,5,1
+WEBDCTX,Deported or left country,4,5,9
+WEBDCTX,Detained as of early March,4,5,5
+WEBDCTX,No longer detained,4,5,3
+WOODBIA,OMAHOLD,2,3,8
+WOODBIA,OMAHOLD,3,4,1
