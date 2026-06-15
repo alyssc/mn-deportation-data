@@ -9,6 +9,13 @@ library(duckdb)
 library(duckplyr)
 library(DBI)
 
+# If you want to use this code, you'll need to download detention stint/stays files (parquet)
+# and facilities/arrests files (Excel) from the Data Deportation Project
+
+
+
+# READ AND JOIN DATASETS --------------------------------------------------
+
 ## Facility names
 facility_crosswalk <- read_xlsx("data/detention-facilities_filtered_20260526_205455.xlsx",sheet=2)
 head(facility_crosswalk)
@@ -66,7 +73,7 @@ surge_arrests <- arrests %>%
     apprehension_state == "MINNESOTA",
     apprehension_date > as.Date("2025-12-01"))
 
-## MERGED METRO SURGE ARRESTS (MN Dec and after) AND DETENTION *STAYS* TABLES
+## MERGE METRO SURGE ARRESTS (MN Dec and after) AND DETENTION *STAYS* TABLES
 dim(surge_stays)
 dim(surge_arrests)
 surge_arrest_stays <- merge(surge_stays, surge_arrests, by = "unique_identifier",all=FALSE)  # 3740 in the overlap of arrest and stay data
@@ -75,11 +82,16 @@ length(unique(surge_arrest_stays$unique_identifier)) # 3571 unique identifiers
 surge_stays %>% group_by(departure_country) %>% summarize(count=n()) %>% arrange(desc(count))
 surge_stays %>% group_by(case_category) %>% summarize(count=n()) %>% arrange(desc(count))
 
-## MERGED METRO SURGE ARRESTS (MN Dec and after) AND DETENTION *STINTS* TABLES
+## MERGE METRO SURGE ARRESTS (MN Dec and after) AND DETENTION *STINTS* TABLES
 dim(surge_stints)
 dim(surge_arrests)
 surge_arrest_stints <- merge(surge_stints, surge_arrests, by = "unique_identifier",all=FALSE)  
 length(unique(surge_arrest_stints$unique_identifier)) # 3571 unique identifiers
+
+
+
+
+# SIMPLIFY AND DEDUPLICATE DATA -------------------------------------------
 
 ## Metro surge stays data cleaning / simplifying
 dat <- surge_arrest_stays %>% 
@@ -93,6 +105,9 @@ dat <- surge_arrest_stays %>%
 # Step 1: Deduplicate stays based on booking time
 dat_dedup <- dat %>% group_by(unique_identifier) %>% 
   distinct(stay_book_in_date_time, .keep_all=T) %>% ungroup()
+
+# Only 10 people have more than 1 stay recorded
+dat_dedup %>% group_by(unique_identifier) %>% summarize(count=n())%>%arrange(desc(count)) %>% head(15)
 
 # Step 2: 2 OPTIONS BELOW
 # 2a: collapse multiple stays into one row
@@ -123,11 +138,66 @@ view(test_processed2a)
 view(test_processed2b)
 view(dat_mostrecent %>% filter(unique_identifier=='a246e14d8369942af002d3c0b923e491f9e9fbef'))
 
-## ALLUVIAL GRAPH
 # I'm going to use the "most recent" detention stay per person; 
 # there is a difference of 10 rows so it doesn't matter much for aggregate analysis. 
 # dat_mostrecent = most recent detention stay for individuals arrested in MN after Dec. 1, 2025
-view(dat_mostrecent)
+
+
+
+
+# OUTCOME OF DETENTION, COUNTRY OF DEPORTATION --------------------------------------------------------
+
+dat_mostrecent %>% group_by(stay_release_reason) %>% summarize(count=n())%>%arrange(desc(count)) %>% head(20)
+
+# NOTE: rows with "Withdrawal" as stay_release_reason don't have departure countries listed. 
+# It's unclear what "Withdrawal" means then because, according to usual immigration detentions, withdraw application = leave the country. 
+# Deportation Data Project did not receive a codebook to decipher this variable. 
+dat_mostrecent%>%filter(stay_release_reason=="Withdrawal") %>% group_by(departure_country.x) %>% summarize(count=n())%>%arrange(desc(count)) %>% head(20)
+
+# stay_release_reason is NA only if there is no book out time; i.e. person was still detained as of early March
+dat_mostrecent%>%filter(is.na(stay_release_reason)) %>% group_by(stay_book_out_date_time) %>% summarize(count=n())%>%arrange(desc(count)) %>% head(20)
+
+released <- c("Order of recognizance", "Bonded Out - IJ", 
+              "Proceedings Terminated", "Order of supervision",
+              "Relief Granted by IJ", "Order of Recognizance - Humanitarian",
+              "Order of Supervision - Re-Release","Paroled",
+              "ORR - Office of Refugee Resettlement","Paroled - Humanitarian",
+              "Bonded Out - Field Office"
+              )
+unclear_or_other <- c("Transferred","U.S. Marshals or other agency (explain in Detention Comments)",
+             "Court Ordered", "Withdrawal")
+
+dat_mostrecent <- dat_mostrecent %>%
+  mutate(outcome = case_when(stay_release_reason == "Removed" ~ "Deported from country", 
+                             stay_release_reason =="Voluntary departure" ~ "Voluntary departure",
+                             !is.na(departure_country.x) ~ "Left country (other)", 
+                             stay_release_reason %in% released ~ "Released from detention",
+                             is.na(stay_release_reason) ~ "Detained as of early March",
+                             stay_release_reason %in% unclear_or_other ~ "Unclear or other outcome", 
+                             stay_release_reason =="Died" ~ "Died",
+                             TRUE ~ "debug"    # make sure all cases are included
+  )) 
+
+by_outcome <- dat_mostrecent %>% group_by(outcome) %>% summarize(count=n())%>%arrange(desc(count))
+write_csv(by_outcome,"output/detention_by_outcome.csv")
+
+by_country <- dat_mostrecent %>% 
+  mutate(departure_country.x = case_when(!is.na(departure_country.x) ~ departure_country.x,
+                                         stay_release_reason %in% c("Voluntary departure","Removed") ~ "No country listed")
+  ) %>%
+  group_by(departure_country.x) %>% summarize(count=n())%>%arrange(desc(count)) %>% 
+  filter(!is.na(departure_country.x)) %>%
+  mutate(departure_country.x=tools::toTitleCase(tolower(departure_country.x)))
+
+write_csv(by_country,"output/deportation_by_country.csv")
+
+
+
+
+# ALLUVIAL GRAPHING OF DETENTION PATHS ------------------------------------
+
+# Getting the data into the format required
+# by Flourish's Alluvial graph (source, dest, step_from, step_to)
 
 alluvialize_row <- function(r, n_steps=10){
   facilities <- strsplit(r$detention_facility_codes_all, "; ")[[1]]
@@ -240,12 +310,20 @@ write_csv(alluvialize_dat(dat_mostrecent%>% filter(n_stints==4)),"output/alluvia
 write_csv(alluvialize_dat(dat_mostrecent%>% filter(n_stints==5)),"output/alluvial5.csv")
 
 
+
+
+# DETENTION STAY LENGTHS --------------------------------------------------
+
 # How long were overall detention stays? 
 stay_lengths <- dat_mostrecent %>%
   filter(!is.na(stay_book_out_date_time)) %>%
   mutate(length_of_stay =interval(as_datetime(stay_book_in_date_time), as_datetime(stay_book_out_date_time)) %/% days(1) ) %>%
   select(length_of_stay) %>% group_by(length_of_stay) %>% summarize(count=n()) %>% arrange(desc(count))
 write_csv(stay_lengths,"output/stay_lengths.csv")
+
+
+
+# DETENTION STINT LENGTHS -------------------------------------------------
 
 ## METRO SURGE DETENTION STINTS
 surge_arrest_stints <- surge_arrest_stints %>% filter(likely_duplicate == FALSE) %>%
@@ -282,7 +360,12 @@ whipple_lengths <- surge_arrest_stints %>%
 write_csv(whipple_lengths,"output/whipple_lengths.csv")
   
 
-# Map attempt 1: animated points
+
+
+# MAPPING DETENTIONS ------------------------------------------------------
+
+## Map attempt 1: animated points
+# I did not end up using this. 
 colnames(surge_arrest_stints)
 
 map <- surge_arrest_stints %>% 
@@ -291,10 +374,11 @@ map <- surge_arrest_stints %>%
   merge(facility_crosswalk, by="detention_facility_code",suffixes = c(".x",".facility")) %>%
   select(stint_start, stint_end, stay_end, name, longitude, latitude, address, state.facility, unique_identifier) 
   
-
 write_csv(map%>%filter(unique_identifier=="e763bad2cd6324e52af1ebb05f7af67d026bf92d"),"output/testmap.csv")
 
-# Map attempt 2: heat maps
+
+## Map attempt 2: heat maps
+# I'm sure there's a better way to do this but this is what worked quickest, okay? 
 head(map)
 heatmap_week <- map %>% group_by(name,latitude, longitude, state.facility,address) %>% 
   replace_na(list(stint_end = as.Date("2026-03-10"))) %>%
@@ -419,7 +503,9 @@ heatmap_day <- map %>% group_by(name,latitude, longitude, state.facility,address
 write_csv(heatmap_day,"output/heatmap_day.csv")
 
 
-# horrendous mess to write code
+## horrendous code to write more horrendous aforementioned code for mapping
+
+# weekly
 code <- ""
 for(t in 0:13){
   c <- t*7
@@ -431,7 +517,7 @@ for(t in 0:13){
 }
 cat(code)
 
-# for days
+# daily
 code <- ""
 for(t in 0:90){
   c <- t
