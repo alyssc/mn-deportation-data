@@ -99,7 +99,9 @@ dat <- surge_arrest_stays %>%
                 detention_facility_codes_all,
                 stay_book_in_date_time,
                 stay_book_out_date_time,
-                departure_country.x) %>%
+                departure_country.x,
+                final_order_yes_no.x,
+                apprehension_criminality) %>%
   mutate(detention_facility_codes_all = paste(detention_facility_codes_all,"; ",sep='') )
 
 # Step 1: Deduplicate stays based on booking time
@@ -148,6 +150,7 @@ view(dat_mostrecent %>% filter(unique_identifier=='a246e14d8369942af002d3c0b923e
 # OUTCOME OF DETENTION, COUNTRY OF DEPORTATION --------------------------------------------------------
 
 dat_mostrecent %>% group_by(stay_release_reason) %>% summarize(count=n())%>%arrange(desc(count)) %>% head(20)
+dat_mostrecent %>% group_by(final_order_yes_no.x) %>% summarize(count=n())%>%arrange(desc(count)) %>% head(20)
 
 # NOTE: rows with "Withdrawal" as stay_release_reason don't have departure countries listed. 
 # It's unclear what "Withdrawal" means then because, according to usual immigration detentions, withdraw application = leave the country. 
@@ -162,10 +165,10 @@ released <- c("Order of recognizance", "Bonded Out - IJ",
               "Relief Granted by IJ", "Order of Recognizance - Humanitarian",
               "Order of Supervision - Re-Release","Paroled",
               "ORR - Office of Refugee Resettlement","Paroled - Humanitarian",
-              "Bonded Out - Field Office"
+              "Bonded Out - Field Office", "Court Ordered"
               )
 unclear_or_other <- c("Transferred","U.S. Marshals or other agency (explain in Detention Comments)",
-             "Court Ordered", "Withdrawal")
+              "Withdrawal")
 
 dat_mostrecent <- dat_mostrecent %>%
   mutate(outcome = case_when(stay_release_reason == "Removed" ~ "Deported from country", 
@@ -191,7 +194,8 @@ by_country <- dat_mostrecent %>%
 
 write_csv(by_country,"output/deportation_by_country.csv")
 
-
+dat_mostrecent %>% filter(outcome=="Deported from country") %>% group_by(final_order_yes_no.x) %>% summarize(count=n())%>%arrange(desc(count)) %>% head(20)
+dat_mostrecent %>% filter(outcome=="Deported from country") %>% group_by(apprehension_criminality) %>% summarize(count=n())%>%arrange(desc(count)) %>% head(20)
 
 
 # ALLUVIAL GRAPHING OF DETENTION PATHS ------------------------------------
@@ -358,8 +362,10 @@ whipple_lengths <- surge_arrest_stints %>%
          detention_facility=="BISHOP HENRY WHIPPLE FED BLDG") %>% 
   select(stint_duration_day)
 write_csv(whipple_lengths,"output/whipple_lengths.csv")
-  
 
+mean(whipple_lengths$stint_duration_day > 2)
+  
+hist(whipple_lengths$stint_duration_day,breaks=60)
 
 
 # MAPPING DETENTIONS ------------------------------------------------------
@@ -528,5 +534,31 @@ for(t in 0:90){
   code <- paste(code,new,sep="\n")
 }
 cat(code)
+
+
+
+# COMPARE TO PREV. MONTHS -------------------------------------------------
+# Looking at arrests/deportations from Sept to Dec to compare
+dbExecute(con,
+          "CREATE VIEW prev_stays AS
+           SELECT * FROM PARQUET_SCAN('data/detention-stays-latest.parquet')
+           WHERE stay_book_in_date_time > '2025-08-24 00:00:00' 
+           AND stay_book_in_date_time <= '2025-12-01 00:00:00' AND
+           (detention_facility_codes_all LIKE '%SPMHOLD%' OR
+           book_in_aor = 'St. Paul Area of Responsibility');")
+
+prev_stays <- tbl(con, "prev_stays") |>
+  collect()
+
+prev_arrests <- arrests %>% 
+  filter(
+    apprehension_state == "MINNESOTA",
+    apprehension_date > as.Date("2025-08-24"),
+    apprehension_date <= as.Date("2025-12-01"))
+
+## MERGE PREV ARRESTS (MN Sept-Dec) AND DETENTION *STAYS* TABLES
+prev_arrest_stays <- merge(prev_stays, prev_arrests, by = "unique_identifier",all=FALSE)
+
+prev_arrest_stays %>% group_by(stay_release_reason) %>% summarize(count=n()) %>% arrange(desc(count))
 
 
