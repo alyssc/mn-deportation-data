@@ -1,172 +1,165 @@
 source,dest,step_from,step_to,count
-ADAMSMS,Deported or left country,3,4,28
-ADAMSMS,Detained as of early March,3,4,3
-ADAMSMS,No longer detained,3,4,2
-BASILLA,Deported or left country,3,4,3
-BASILLA,Detained as of early March,3,4,1
-BSAHOLD,GRAYSKY,2,3,1
-CASSCNE,NEMCCOI,2,3,7
-CASSCNE,OMAHOLD,2,3,2
-CIBOCNM,Detained as of early March,3,4,33
-CIBOCNM,No longer detained,3,4,8
-CROWGMN,DOUGLWI,1,2,1
-CROWGMN,Deported or left country,3,4,1
-CROWGMN,Detained as of early March,3,4,1
-CROWGMN,KANDIMN,2,3,6
-CROWGMN,SHERBMN,2,3,9
-CROWGMN,SPMHOLD,1,2,2
-CROWGMN,SPMHOLD,2,3,20
-DAKOTNE,OMAHOLD,2,3,1
-DOUGLWI,EROFCB,2,3,2
-DOUGLWI,SPMHOLD,1,2,1
-DOUGLWI,SPMHOLD,2,3,4
-Deported or left country,CHILE,4,5,1
-Deported or left country,COLOMBIA,4,5,4
-Deported or left country,ECUADOR,4,5,159
-Deported or left country,EL SALVADOR,4,5,12
-Deported or left country,GUATEMALA,4,5,24
-Deported or left country,HONDURAS,4,5,22
-Deported or left country,INDIA,4,5,2
-Deported or left country,LAOS,4,5,1
-Deported or left country,MEXICO,4,5,70
-Deported or left country,NICARAGUA,4,5,35
-Deported or left country,PERU,4,5,2
-Deported or left country,SERBIA,4,5,2
-Deported or left country,SOMALIA,4,5,1
-Deported or left country,SPAIN,4,5,2
-Deported or left country,VENEZUELA,4,5,18
-EAZ,Deported or left country,3,4,1
-EAZ,EAZ,2,3,1
-EPC,Deported or left country,3,4,4
-EPC,Detained as of early March,3,4,72
-EPC,No longer detained,3,4,14
-EROFCB,ADAMSMS,2,3,33
-EROFCB,BASILLA,2,3,4
-EROFCB,CIBOCNM,2,3,41
-EROFCB,Deported or left country,3,4,75
-EROFCB,Detained as of early March,3,4,34
-EROFCB,EPC,2,3,89
-EROFCB,EROFCB,2,3,89
-EROFCB,FLO,2,3,3
-EROFCB,FSF,2,3,1
-EROFCB,HOUICDF,2,3,8
-EROFCB,IWAHOLD,2,3,16
-EROFCB,JENADLA,2,3,33
-EROFCB,JENATLA,2,3,47
-EROFCB,JKPCCLA,2,3,8
-EROFCB,KRNRCTX,2,3,19
-EROFCB,No longer detained,3,4,14
-EROFCB,OTRPCNM,2,3,78
-EROFCB,PIC,2,3,69
-EROFCB,PINEPLA,2,3,8
-EROFCB,RVRCCLA,2,3,8
-EROFCB,RWCCMLA,2,3,11
-EROFCB,SPMHOLD,2,3,75
-EROFCB,TOORANM,2,3,52
-FLO,Deported or left country,3,4,3
-FREEBMN,EROFCB,2,3,1
-FREEBMN,FREEBMN,2,3,1
-FREEBMN,No longer detained,3,4,1
-FREEBMN,PIC,2,3,17
-FREEBMN,SPMHOLD,2,3,53
-FSF,Detained as of early March,3,4,1
-GFCORND,SPMHOLD,1,2,1
-GRAYSKY,No longer detained,3,4,1
-HOUHOLD,SNAHOLD,2,3,4
-HOUICDF,No longer detained,3,4,8
-HOUICDF,SPMHOLD,2,3,2
-IWAHOLD,Deported or left country,3,4,14
-IWAHOLD,No longer detained,3,4,2
-JENADLA,Deported or left country,3,4,31
-JENADLA,No longer detained,3,4,2
-JENATLA,Deported or left country,3,4,37
-JENATLA,Detained as of early March,3,4,11
-JENATLA,No longer detained,3,4,2
-JKPCCLA,Deported or left country,3,4,5
-JKPCCLA,Detained as of early March,3,4,2
-JKPCCLA,No longer detained,3,4,1
-KANDIMN,CROWGMN,1,2,1
-KANDIMN,CROWGMN,2,3,2
-KANDIMN,Detained as of early March,3,4,1
-KANDIMN,No longer detained,3,4,6
-KANDIMN,PIC,2,3,19
-KANDIMN,SPMHOLD,1,2,5
-KANDIMN,SPMHOLD,2,3,54
-KRNRCTX,Deported or left country,3,4,12
-KRNRCTX,Detained as of early March,3,4,7
-KRNRCTX,No longer detained,3,4,1
-MINNESD,WOODBIA,2,3,1
-MTGHOLD,EROFCB,2,3,17
-NEMCCOI,Detained as of early March,3,4,4
-NEMCCOI,No longer detained,3,4,3
-No longer detained,Bonded Out - Field Office,4,5,8
-No longer detained,Bonded Out - IJ,4,5,70
-No longer detained,Court Ordered,4,5,1
-No longer detained,ORR - Office of Refugee Resettlement,4,5,1
-No longer detained,Order of Recognizance - Humanitarian,4,5,9
-No longer detained,Order of Supervision - Re-Release,4,5,7
-No longer detained,Order of recognizance,4,5,197
-No longer detained,Order of supervision,4,5,20
-No longer detained,Paroled,4,5,2
-No longer detained,Proceedings Terminated,4,5,21
-No longer detained,Relief Granted by IJ,4,5,12
-No longer detained,Removed,4,5,32
-No longer detained,Transferred,4,5,1
-No longer detained,U.S. Marshals or other agency (explain in Detention Comments),4,5,2
-No longer detained,Voluntary departure,4,5,1
-No longer detained,Withdrawal,4,5,10
-OMAHOLD,Deported or left country,3,4,4
-OTRPCNM,Deported or left country,3,4,7
-OTRPCNM,Detained as of early March,3,4,47
-OTRPCNM,No longer detained,3,4,24
-PIC,Deported or left country,3,4,83
-PIC,Detained as of early March,3,4,14
-PIC,No longer detained,3,4,22
-PINEPLA,Deported or left country,3,4,6
-PINEPLA,Detained as of early March,3,4,2
-POLKJIA,OMAHOLD,2,3,1
-RVRCCLA,Deported or left country,3,4,7
-RVRCCLA,Detained as of early March,3,4,1
-RWCCMLA,Deported or left country,3,4,9
-RWCCMLA,Detained as of early March,3,4,1
-RWCCMLA,No longer detained,3,4,1
-SFDHOLD,MINNESD,1,2,1
-SHERBMN,Detained as of early March,3,4,4
-SHERBMN,No longer detained,3,4,7
-SHERBMN,PIC,2,3,13
-SHERBMN,SPMHOLD,1,2,7
-SHERBMN,SPMHOLD,2,3,68
-SNAHOLD,KRNRCTX,2,3,1
-SNAHOLD,No longer detained,3,4,4
-SNAHOLD,STCDFTX,2,3,2
-SNAHOLD,STFRCTX,2,3,9
-SPMHOLD,BSAHOLD,1,2,1
-SPMHOLD,CASSCNE,1,2,9
-SPMHOLD,CROWGMN,1,2,34
-SPMHOLD,DAKOTNE,1,2,1
-SPMHOLD,DOUGLWI,1,2,5
-SPMHOLD,Deported or left country,3,4,15
-SPMHOLD,EAZ,1,2,1
-SPMHOLD,EPC,2,3,1
-SPMHOLD,EROFCB,1,2,692
-SPMHOLD,EROFCB,2,3,14
-SPMHOLD,FREEBMN,1,2,72
-SPMHOLD,HOUHOLD,1,2,4
-SPMHOLD,HOUICDF,1,2,2
-SPMHOLD,JENATLA,2,3,3
-SPMHOLD,KANDIMN,1,2,75
-SPMHOLD,KANDIMN,2,3,1
-SPMHOLD,MTGHOLD,1,2,17
-SPMHOLD,No longer detained,3,4,261
-SPMHOLD,PIC,2,3,1
-SPMHOLD,POLKJIA,1,2,1
-SPMHOLD,SHERBMN,1,2,81
-SPMHOLD,SHERBMN,2,3,2
-SPMHOLD,SNAHOLD,1,2,12
-SPMHOLD,SPMHOLD,1,2,6
-STCDFTX,Deported or left country,3,4,1
-STCDFTX,Detained as of early March,3,4,1
-STFRCTX,Deported or left country,3,4,9
-TOORANM,Detained as of early March,3,4,42
-TOORANM,No longer detained,3,4,10
-WOODBIA,Detained as of early March,3,4,1
+AZ Removal Operation Coord Center (Arocc),Deported from country,3,4,16
+Adams County Correctional Center,Deported from country,3,4,30
+Adams County Correctional Center,Detained as of early March,3,4,3
+Alexandria Staging Facility,Deported from country,3,4,39
+Alexandria Staging Facility,Detained as of early March,3,4,11
+Broadview Service Staging,Grayson County Detention Center,2,3,1
+Camp East Montana,AZ Removal Operation Coord Center (Arocc),2,3,16
+Camp East Montana,Adams County Correctional Center,2,3,33
+Camp East Montana,Alexandria Staging Facility,2,3,47
+Camp East Montana,Camp East Montana,2,3,89
+Camp East Montana,Central Louisiana ICE Processing Center,2,3,33
+Camp East Montana,Cibola County Correctional Center,2,3,41
+Camp East Montana,Deported from country,3,4,79
+Camp East Montana,Detained as of early March,3,4,34
+Camp East Montana,El Paso Service Processing Center,2,3,89
+Camp East Montana,Florence Service Processing Center,2,3,3
+Camp East Montana,Florence Staging Facility,2,3,1
+Camp East Montana,Houston Contract Detention Facility,2,3,8
+Camp East Montana,Jackson Parish Correctional Center,2,3,8
+Camp East Montana,Karnes County Residential Center2,2,3,19
+Camp East Montana,Left country (other),3,4,1
+Camp East Montana,Otero County Processing Center,2,3,78
+Camp East Montana,Pine Prairie ICE Processing Center,2,3,8
+Camp East Montana,Port Isabel Service Processing Center,2,3,69
+Camp East Montana,Released from detention,3,4,7
+Camp East Montana,Richwood Correctional Center,2,3,11
+Camp East Montana,River Correctional Center,2,3,8
+Camp East Montana,South Louisiana ICE Processing Center,2,3,4
+Camp East Montana,Torrance County Detention Facility,2,3,52
+Camp East Montana,Unclear or other outcome,3,4,1
+Camp East Montana,Voluntary departure,3,4,1
+Camp East Montana,Whipple Building,2,3,75
+Cass County Jail,McCook Detention Center,2,3,7
+Cass County Jail,Omaha Field Office Hold,2,3,2
+Central Louisiana ICE Processing Center,Deported from country,3,4,33
+Cibola County Correctional Center,Detained as of early March,3,4,33
+Cibola County Correctional Center,Released from detention,3,4,8
+Crow Wing County Jail,Deported from country,3,4,1
+Crow Wing County Jail,Detained as of early March,3,4,1
+Crow Wing County Jail,Douglas County Jail,1,2,1
+Crow Wing County Jail,Kandiyohi County Jail,2,3,6
+Crow Wing County Jail,Sherburne County Jail Services,2,3,9
+Crow Wing County Jail,Whipple Building,1,2,2
+Crow Wing County Jail,Whipple Building,2,3,20
+Dakota County Jail,Omaha Field Office Hold,2,3,1
+Deported from country,Chile,4,5,1
+Deported from country,Colombia,4,5,4
+Deported from country,Ecuador,4,5,158
+Deported from country,El Salvador,4,5,12
+Deported from country,Guatemala,4,5,24
+Deported from country,Honduras,4,5,21
+Deported from country,India,4,5,2
+Deported from country,Laos,4,5,1
+Deported from country,Mexico,4,5,63
+Deported from country,Nicaragua,4,5,35
+Deported from country,Peru,4,5,2
+Deported from country,Serbia,4,5,2
+Deported from country,Somalia,4,5,1
+Deported from country,Spain,4,5,2
+Deported from country,Venezuela,4,5,17
+Douglas County Jail,Camp East Montana,2,3,2
+Douglas County Jail,Whipple Building,1,2,1
+Douglas County Jail,Whipple Building,2,3,4
+El Paso Service Processing Center,Deported from country,3,4,5
+El Paso Service Processing Center,Detained as of early March,3,4,72
+El Paso Service Processing Center,Released from detention,3,4,13
+Eloy Detention Center,Deported from country,3,4,1
+Eloy Detention Center,Eloy Detention Center,2,3,1
+Florence Service Processing Center,Deported from country,3,4,3
+Florence Staging Facility,Detained as of early March,3,4,1
+Freeborn County Jail Services,Camp East Montana,2,3,1
+Freeborn County Jail Services,Freeborn County Jail Services,2,3,1
+Freeborn County Jail Services,Port Isabel Service Processing Center,2,3,17
+Freeborn County Jail Services,Released from detention,3,4,1
+Freeborn County Jail Services,Whipple Building,2,3,53
+Grand Forks County Correctional Center,Whipple Building,1,2,1
+Grayson County Detention Center,Released from detention,3,4,1
+Houston Contract Detention Facility,Released from detention,3,4,8
+Houston Contract Detention Facility,Whipple Building,2,3,2
+Houston Field Office Hold Room,San Antonio Detention and Removal Operations Hold Room,2,3,4
+Jackson Parish Correctional Center,Deported from country,3,4,6
+Jackson Parish Correctional Center,Detained as of early March,3,4,2
+Kandiyohi County Jail,Crow Wing County Jail,1,2,1
+Kandiyohi County Jail,Crow Wing County Jail,2,3,2
+Kandiyohi County Jail,Detained as of early March,3,4,1
+Kandiyohi County Jail,Port Isabel Service Processing Center,2,3,19
+Kandiyohi County Jail,Released from detention,3,4,5
+Kandiyohi County Jail,Unclear or other outcome,3,4,1
+Kandiyohi County Jail,Whipple Building,1,2,5
+Kandiyohi County Jail,Whipple Building,2,3,54
+Karnes County Residential Center2,Deported from country,3,4,13
+Karnes County Residential Center2,Detained as of early March,3,4,7
+Left country (other),Ecuador,4,5,1
+Left country (other),Honduras,4,5,1
+Left country (other),Mexico,4,5,2
+Left country (other),Venezuela,4,5,1
+McCook Detention Center,Detained as of early March,3,4,4
+McCook Detention Center,Released from detention,3,4,3
+Minnehaha County Jail,Woodbury County Jail,2,3,1
+Montgomery Hold Room,Camp East Montana,2,3,17
+Omaha Field Office Hold,Deported from country,3,4,1
+Omaha Field Office Hold,Left country (other),3,4,3
+Otero County Processing Center,Deported from country,3,4,8
+Otero County Processing Center,Detained as of early March,3,4,47
+Otero County Processing Center,Released from detention,3,4,23
+Pine Prairie ICE Processing Center,Deported from country,3,4,6
+Pine Prairie ICE Processing Center,Detained as of early March,3,4,2
+Polk County Jail,Omaha Field Office Hold,2,3,1
+Port Isabel Service Processing Center,Deported from country,3,4,90
+Port Isabel Service Processing Center,Detained as of early March,3,4,14
+Port Isabel Service Processing Center,Left country (other),3,4,1
+Port Isabel Service Processing Center,Released from detention,3,4,9
+Port Isabel Service Processing Center,Unclear or other outcome,3,4,1
+Port Isabel Service Processing Center,Voluntary departure,3,4,4
+Richwood Correctional Center,Deported from country,3,4,10
+Richwood Correctional Center,Detained as of early March,3,4,1
+River Correctional Center,Deported from country,3,4,7
+River Correctional Center,Detained as of early March,3,4,1
+San Antonio Detention and Removal Operations Hold Room,Karnes County Residential Center2,2,3,1
+San Antonio Detention and Removal Operations Hold Room,Released from detention,3,4,4
+San Antonio Detention and Removal Operations Hold Room,South Texas Family Residential Center1,2,3,9
+San Antonio Detention and Removal Operations Hold Room,South Texas ICE Processing Center,2,3,2
+Sherburne County Jail Services,Detained as of early March,3,4,4
+Sherburne County Jail Services,Port Isabel Service Processing Center,2,3,13
+Sherburne County Jail Services,Released from detention,3,4,7
+Sherburne County Jail Services,Whipple Building,1,2,7
+Sherburne County Jail Services,Whipple Building,2,3,68
+Sioux Falls Hold Room,Minnehaha County Jail,1,2,1
+South Louisiana ICE Processing Center,Deported from country,3,4,3
+South Louisiana ICE Processing Center,Detained as of early March,3,4,1
+South Texas Family Residential Center1,Deported from country,3,4,9
+South Texas ICE Processing Center,Deported from country,3,4,1
+South Texas ICE Processing Center,Detained as of early March,3,4,1
+Torrance County Detention Facility,Deported from country,3,4,1
+Torrance County Detention Facility,Detained as of early March,3,4,42
+Torrance County Detention Facility,Released from detention,3,4,9
+Voluntary departure,Mexico,4,5,5
+Whipple Building,Alexandria Staging Facility,2,3,3
+Whipple Building,Broadview Service Staging,1,2,1
+Whipple Building,Camp East Montana,1,2,692
+Whipple Building,Camp East Montana,2,3,14
+Whipple Building,Cass County Jail,1,2,9
+Whipple Building,Crow Wing County Jail,1,2,34
+Whipple Building,Dakota County Jail,1,2,1
+Whipple Building,Deported from country,3,4,15
+Whipple Building,Douglas County Jail,1,2,5
+Whipple Building,El Paso Service Processing Center,2,3,1
+Whipple Building,Eloy Detention Center,1,2,1
+Whipple Building,Freeborn County Jail Services,1,2,72
+Whipple Building,Houston Contract Detention Facility,1,2,2
+Whipple Building,Houston Field Office Hold Room,1,2,4
+Whipple Building,Kandiyohi County Jail,1,2,75
+Whipple Building,Kandiyohi County Jail,2,3,1
+Whipple Building,Montgomery Hold Room,1,2,17
+Whipple Building,Polk County Jail,1,2,1
+Whipple Building,Port Isabel Service Processing Center,2,3,1
+Whipple Building,Released from detention,3,4,250
+Whipple Building,San Antonio Detention and Removal Operations Hold Room,1,2,12
+Whipple Building,Sherburne County Jail Services,1,2,81
+Whipple Building,Sherburne County Jail Services,2,3,2
+Whipple Building,Unclear or other outcome,3,4,10
+Whipple Building,Voluntary departure,3,4,1
+Whipple Building,Whipple Building,1,2,6
+Woodbury County Jail,Detained as of early March,3,4,1

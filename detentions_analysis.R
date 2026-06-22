@@ -10,7 +10,7 @@ library(duckplyr)
 library(DBI)
 
 # If you want to use this code, you'll need to download detention stint/stays files (parquet)
-# and facilities/arrests files (Excel) from the Data Deportation Project
+# and facilities/arrests files (Excel) from the Deportation Data Project
 
 
 
@@ -18,7 +18,8 @@ library(DBI)
 
 ## Facility names
 facility_crosswalk <- read_xlsx("data/detention-facilities_filtered_20260526_205455.xlsx",sheet=2)
-head(facility_crosswalk)
+facility_crosswalk <- facility_crosswalk %>%
+  filter(!is.na(detention_facility_code))
 
 ## DETENTION STAYS
 nanoparquet::read_parquet_info("data/detention-stays-latest.parquet")
@@ -72,6 +73,16 @@ surge_arrests <- arrests %>%
   filter(
     apprehension_state == "MINNESOTA",
     apprehension_date > as.Date("2025-12-01"))
+
+dim(surge_arrests$unique_identifier) # 3785 arrests made
+length(unique(surge_arrests$unique_identifier)) # 3625 individuals arrested
+
+# Some people appear to have been arrested twice: 
+length((surge_arrests %>% group_by(unique_identifier) %>% summarize(count=n()) %>% filter(count > 1))$unique_identifier)
+view(surge_arrests %>% filter(
+  unique_identifier %in% (surge_arrests %>% group_by(unique_identifier) %>% summarize(count=n()) %>% filter(count > 1))$unique_identifier
+))
+
 
 ## MERGE METRO SURGE ARRESTS (MN Dec and after) AND DETENTION *STAYS* TABLES
 dim(surge_stays)
@@ -202,34 +213,32 @@ dat_mostrecent %>% filter(outcome=="Deported from country") %>% group_by(apprehe
 
 # Getting the data into the format required
 # by Flourish's Alluvial graph (source, dest, step_from, step_to)
+dat_mostrecent <- dat_mostrecent %>%
+  mutate(departure_country.x=tools::toTitleCase(tolower(departure_country.x)))
 
 alluvialize_row <- function(r, n_steps=10){
-  facilities <- strsplit(r$detention_facility_codes_all, "; ")[[1]]
+  facility_codes <- strsplit(r$detention_facility_codes_all, "; ")[[1]]
   
   # use crosswalk to replace acronyms with names
-  for(f in facilities){
-    
+  facilities <- c()
+  for(f in facility_codes){
+    name <- facility_crosswalk[facility_crosswalk$detention_facility_code == f,]$name
+    name <- case_when(!is.na(name) ~ name, TRUE ~ f)
+    facilities <- c(facilities, name) 
   }
   
   departure_country <- r$departure_country.x
-  left_country <- !is.na(departure_country) | r$stay_release_reason %in% c("Removed","Voluntary departure")
   
   no_book_out <- is.na(r$stay_book_out_date_time)
+  
   alluvialized_rows <- data.frame(source=character(),
                                   dest=character(),
                                   step_from=integer(),
                                   step_to=integer())
   for(i in 1:r$n_stints){
     if(i==r$n_stints){
-      if(left_country){
-        alluvialized_rows <- rbind(alluvialized_rows,data.frame(source=facilities[i],dest="Deported or left country",step_from=i,step_to=i+1))
-        if(!is.na(departure_country)){alluvialized_rows <- rbind(alluvialized_rows,data.frame(source="Deported or left country",dest=departure_country,step_from=i+1,step_to=i+2))}
-      } else if(no_book_out){
-        alluvialized_rows <- rbind(alluvialized_rows,data.frame(source=facilities[i],dest="Detained as of early March",step_from=i,step_to=i+1))
-      } else{
-        alluvialized_rows <- rbind(alluvialized_rows,data.frame(source=facilities[i],dest="No longer detained",step_from=i,step_to=i+1))
-        # alluvialized_rows <- rbind(alluvialized_rows,data.frame(source="No longer detained",dest=r$stay_release_reason,step_from=i+1,step_to=i+2))
-      }
+      alluvialized_rows <- rbind(alluvialized_rows,data.frame(source=facilities[i],dest=r$outcome,step_from=i,step_to=i+1))
+      if(!is.na(departure_country)){alluvialized_rows <- rbind(alluvialized_rows,data.frame(source=r$outcome,dest=departure_country,step_from=i+1,step_to=i+2))}
     }
     else{
       alluvialized_rows <- rbind(alluvialized_rows,data.frame(source=facilities[i],dest=facilities[i+1],step_from=i,step_to=i+1))
@@ -275,7 +284,7 @@ write_csv(alluvialize_dat(dat_mostrecent%>% filter(n_stints==1)),"output/alluvia
 write_csv(alluvialize_dat(dat_mostrecent%>% filter(n_stints==2)),"output/alluvial2.csv")
 
 top4<-dat_mostrecent %>% filter(n_stints==2) %>%
-  group_by(detention_facility_codes_all) %>%
+  group_by(detention_facility_codes_all, departure_country.x) %>%
   summarize(count=n()) %>%
   arrange(desc(count)) %>%
   head(4)
